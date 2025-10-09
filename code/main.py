@@ -2,8 +2,11 @@ import pickle
 import re
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
-from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi import FastAPI 
+from fastapi.responses import FileResponse
+from pydantic import BaseModel 
+from pathlib import Path
+from fastapi.middleware.cors import CORSMiddleware
 
 
 list_stopwords = stopwords.words('english')
@@ -27,6 +30,21 @@ app = FastAPI()
 # (1) Define input schema
 class NewsRequest(BaseModel):
     text: str
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # Allows all origins (unsafe for public/prod, use your frontend URL for security)
+    allow_credentials=True,
+    allow_methods=["*"],   # Allows all HTTP methods
+    allow_headers=["*"],   # Allows all headers
+)
+
+file_path = Path(__file__).parent.parent / "frontend" / "index.html"
+
+@app.get('/', response_class=FileResponse)
+def root():
+    return FileResponse(Path(file_path))
+
 
 # (2) Create prediction endpoint
 @app.post("/predict")
