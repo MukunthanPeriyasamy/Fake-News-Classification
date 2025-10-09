@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ### 4. Serve as API (FastAPI)
 
 ```bash
-uvicorn model.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 API endpoint will be available at: `http://localhost:8000/predict`
 
