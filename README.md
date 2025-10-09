@@ -1,7 +1,3 @@
-Here is a professional and readable README for your repository:
-
-***
-
 # Fake News Classification
 
 This repository provides a complete machine learning solution for detecting fake news articles using traditional ML methods and text processing on English (and optionally Tamil) datasets. Designed for extensibility, deployment, and easy API access.
