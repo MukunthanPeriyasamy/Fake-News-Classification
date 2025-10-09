@@ -79,8 +79,3 @@ Response:
 ## Author
 
 Mukunthan Periyasamy
-
-
-[1](https://github.com/czesctuklap/fake-news-classification)
-[2](https://www.kaggle.com/datasets/aadyasingh55/fake-news-classification)
-[3](https://github.com/hritik5102/Fake-news-classification-model)
