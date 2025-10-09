@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
-API endpoint will be available at: `http://localhost:8000/predict`
+API endpoint will be available at: `http://localhost:8000`
 
 ### 5. Deploy with Docker
 
